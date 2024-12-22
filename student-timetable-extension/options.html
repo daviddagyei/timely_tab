@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Timetable</title>
+  <!-- Include Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Notification Div -->
+  <div id="notification" class="hide"></div>
+
+  <h1>Edit Your Timetable</h1>
+  
+
+  <!-- Time Increment Selection Section -->
+  <h2>Time Increment</h2>
+  <label for="time-increment">Select Time Increment:</label>
+  <select id="time-increment">
+    <option value="15">15 Minutes</option>
+    <option value="30">30 Minutes</option>
+    <option value="60" selected>60 Minutes</option>
+  </select>
+
+  <!-- ICS Import Section -->
+  <h2>Import Schedule from ICS File</h2>
+  <div id="ics-import-section">
+    <input type="file" id="ics-file-input" accept=".ics">
+    <button id="ics-import-btn">Import Schedule</button>
+  </div>
+
+  <!-- Timetable Editor -->
+  <div id="editor"></div>
+  <button id="save-btn">Save Timetable</button>
+
+  <!-- Theme Selection Section -->
+  <h2>Choose Theme</h2>
+  <select id="theme-select">
+    <option value="light">Light Mode</option>
+    <option value="dark">Dark Mode</option>
+    <option value="custom">Custom</option>
+  </select>
+
+  <div id="custom-colors" style="display: none;">
+    <h3>Customize Colors</h3>
+    <label for="background-color">Background Color:</label>
+    <input type="color" id="background-color" value="#ffffff"><br>
+
+    <label for="text-color">Text Color:</label>
+    <input type="color" id="text-color" value="#000000"><br>
+
+    <label for="primary-color">Primary Color:</label>
+    <input type="color" id="primary-color" value="#4CAF50"><br>
+
+    <label for="secondary-color">Secondary Color:</label>
+    <input type="color" id="secondary-color" value="#6c757d"><br>
+
+    <label for="border-color">Border Color:</label>
+    <input type="color" id="border-color" value="#dddddd"><br>
+  </div>
+
+  <!-- Events Management Section -->
+  <h2>Manage Events</h2>
+  <div id="events-manager">
+    <button id="add-event-btn">Add Event</button>
+    <ul id="events-list"></ul>
+  </div>
+
+  <!-- Tasks Management Section -->
+  <h2>Manage Tasks</h2>
+  <div id="tasks-manager">
+    <button id="add-task-btn">Add Task</button>
+    <ul id="tasks-list"></ul>
+  </div>
+
+  <!-- Modals for Adding Events and Tasks -->
+  <!-- Event Modal -->
+  <div id="event-modal" class="modal hide">
+    <div class="modal-content">
+      <span class="close" id="close-event-modal">&times;</span>
+      <h3>Add Event</h3>
+      <label for="event-title">Title:</label>
+      <input type="text" id="event-title"><br>
+      <label for="event-date">Date:</label>
+      <input type="date" id="event-date"><br>
+      <label for="event-time">Time:</label>
+      <input type="time" id="event-time"><br>
+      <button id="save-event-btn">Save Event</button>
+    </div>
+  </div>
+
+  <!-- Task Modal -->
+  <div id="task-modal" class="modal hide">
+    <div class="modal-content">
+      <span class="close" id="close-task-modal">&times;</span>
+      <h3>Add Task</h3>
+      <label for="task-title">Title:</label>
+      <input type="text" id="task-title"><br>
+      <button id="save-task-btn">Save Task</button>
+    </div>
+  </div>
+
+  <!-- Include Scripts -->
+  <!-- Include Interact.js via CDN -->
+  <script src="libs/interact.min.js"></script>
+  <script src="libs/Sortable.min.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

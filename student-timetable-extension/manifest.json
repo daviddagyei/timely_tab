@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "Timely Tab: Student Planner & Organizer",
+    "version": "1.0",
+    "description": "Displays a personalized student timetable with notifications for upcoming classes.",
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "icon.png"
+    },
+    "permissions": ["storage", "alarms", "notifications"],
+    "options_ui": {
+      "page": "options.html",
+      "open_in_tab": true
+    },
+    "background": {
+      "service_worker": "background.js"
+    }
+  }
+  

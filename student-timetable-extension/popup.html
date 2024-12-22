@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Student Dashboard</title>
+  <!-- Include Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="dashboard">
+    <h1 id="greeting"></h1>
+    <div id="today-schedule" class="dashboard-section">
+      <h2>Today's Schedule</h2>
+      <ul id="today-list"></ul>
+    </div>
+    <div id="upcoming-events" class="dashboard-section">
+      <h2>Upcoming Events</h2>
+      <ul id="upcoming-list"></ul>
+    </div>
+    <div id="tasks" class="dashboard-section">
+      <h2>Tasks</h2>
+      <ul id="tasks-list"></ul>
+    </div>
+    <button id="edit-btn">Manage Schedule</button>
+  </div>
+  <!-- Include Scripts -->
+  <script src="popup.js"></script>
+</body>
+</html>
