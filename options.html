@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Timely Tab - Edit Timetable</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Notification Div -->
+  <div id="notification" class="hide"></div>
+
+  <h1>Timely Tab: Edit Your Timetable</h1>
+
+  <!-- (NEW) A top-menu container for Settings + Add Event/Task -->
+  <div id="top-menu">
+    <button id="settings-toggle" class="settings-button">Settings ▼</button>
+    <button id="add-event-btn" class="secondary-button">Add Event</button>
+    <button id="add-task-btn" class="secondary-button">Add Task</button>
+  </div>
+
+  <!-- Collapsible Settings Panel -->
+  <div id="settings-panel" class="settings-panel hide">
+    <!-- Time Increment & Range -->
+    <h3>Time Increment</h3>
+    <label for="time-increment">Select Time Increment:</label>
+    <select id="time-increment">
+      <option value="15">15 Minutes</option>
+      <option value="30">30 Minutes</option>
+      <option value="60" selected>60 Minutes</option>
+    </select>
+
+    <h3>Time Settings</h3>
+    <label for="day-start">Day Start Time:</label>
+    <input type="time" id="day-start" value="08:00"><br>
+    <label for="day-end">Day End Time:</label>
+    <input type="time" id="day-end" value="22:00"><br>
+
+    <h3>Week Navigation</h3>
+    <div id="week-navigation">
+      <button id="prev-week-btn">Previous Week</button>
+      <button id="next-week-btn">Next Week</button>
+    </div>
+
+    <h3>Import from ICS</h3>
+    <input type="file" id="ics-file-input" accept=".ics">
+    <button id="ics-import-btn">Import Schedule</button>
+
+    <!-- Theme Selection -->
+    <h3>Choose Theme</h3>
+    <select id="theme-select">
+      <option value="light">Light Mode</option>
+      <option value="dark">Dark Mode</option>
+      <option value="custom">Custom</option>
+    </select>
+
+    <div id="custom-colors" style="display: none;">
+      <label for="background-color">Background:</label>
+      <input type="color" id="background-color" value="#ffffff"><br>
+      <label for="text-color">Text:</label>
+      <input type="color" id="text-color" value="#000000"><br>
+      <label for="primary-color">Primary:</label>
+      <input type="color" id="primary-color" value="#4CAF50"><br>
+      <label for="secondary-color">Secondary:</label>
+      <input type="color" id="secondary-color" value="#6c757d"><br>
+      <label for="border-color">Border:</label>
+      <input type="color" id="border-color" value="#dddddd"><br>
+    </div>
+  </div><!-- /settings-panel -->
+
+  <!-- Timetable Editor -->
+  <div id="editor"></div>
+
+  <!-- Events List / Modal -->
+  <h2>Manage Events</h2>
+  <ul id="events-list"></ul>
+  <div id="event-modal" class="modal hide">
+    <div class="modal-content">
+      <span class="close" id="close-event-modal">&times;</span>
+      <h3>Add Event</h3>
+      <label for="event-title">Title:</label>
+      <input type="text" id="event-title"><br>
+      <label for="event-date">Date:</label>
+      <input type="date" id="event-date"><br>
+      <label for="event-time">Time:</label>
+      <input type="time" id="event-time"><br>
+      <button id="save-event-btn">Save Event</button>
+    </div>
+  </div>
+
+  <!-- Tasks List / Modal -->
+  <h2>Manage Tasks</h2>
+  <ul id="tasks-list"></ul>
+  <div id="task-modal" class="modal hide">
+    <div class="modal-content">
+      <span class="close" id="close-task-modal">&times;</span>
+      <h3>Add Task</h3>
+      <label for="task-title">Title:</label>
+      <input type="text" id="task-title"><br>
+      <button id="save-task-btn">Save Task</button>
+    </div>
+  </div>
+
+  <!-- Interact.js & Sortable.js -->
+  <script src="libs/interact.min.js"></script>
+  <script src="libs/Sortable.min.js"></script>
+
+  <!-- Main JS (Option B with multi-week ICS) -->
+  <script src="options.js"></script>
+</body>
+</html>
